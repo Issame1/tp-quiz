@@ -1,0 +1,16 @@
+
+  <div class="example-button-row" *ngIf="currentQuestion == null">
+    <button mat-raised-button color="warn" (click)="newGame()">Nouvelle partie</button>
+  </div>
+
+
+  <div *ngIf="currentQuestion != null">
+    <span >Quelle est la capitale de : {{currentQuestion.pays}}</span> <br/>
+    <button *ngFor="let p of currentQuestion.propositions" mat-raised-button color="warn" (click)="answerGiven()" (click)="loadNextQuestion()">{{p}}<br/></button>
+    
+  </div>
+
+
+  
+
+
